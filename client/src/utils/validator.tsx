@@ -24,7 +24,7 @@ export function validator(formData: any, schema: any) {
       formData[field] &&
       formData[field].length < fieldRules.length.minimum
     ) {
-      errors[field] = `최소 ${fieldRules.length.minimum}자 이상이어야 합니다.`;
+      errors[field] = `Value should over ${fieldRules.length.minimum}.`;
     }
 
     // 패스워드와 패스워드 확인 필드가 있고, 값이 다를 경우 오류 반환
@@ -32,7 +32,7 @@ export function validator(formData: any, schema: any) {
       field === "passwordConfirm" &&
       formData[field] !== formData["password"]
     ) {
-      errors[field] = "패스워드가 일치하지 않습니다.";
+      errors[field] = "It's not matched.";
     }
   });
 

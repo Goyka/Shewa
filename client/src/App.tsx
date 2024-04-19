@@ -9,7 +9,7 @@ export default function App() {
 
   useEffect(() => {
     if (token) {
-      toast.success("로그인 정보가 있습니다. 대쉬보드로 이동합니다.");
+      toast.info("Welcome back!");
       navigate("/dashboard");
     } else {
       navigate("/landing");

@@ -91,7 +91,7 @@ export default function Auth() {
         >
           <Input
             size="large"
-            placeholder=" 이메일 주소"
+            placeholder=" example@email.com"
             type="text"
             onChange={(e) => handleChange(e, "username")}
             value={formState.data?.username}
@@ -99,7 +99,7 @@ export default function Auth() {
           {errors.username && <Text type="danger">{errors.username}</Text>}
           <Input
             size="large"
-            placeholder=" 패스워드"
+            placeholder=" password"
             type="password"
             onChange={(e) => handleChange(e, "password")}
             value={formState.data?.password}
@@ -107,7 +107,7 @@ export default function Auth() {
           />
           {errors.password && <Text type="danger">{errors.password}</Text>}
           <sub className="flex gap-2">
-            <Text type="secondary">이번이 처음이시라면?</Text>
+            <Text type="secondary">Is this your first time?</Text>
             <Link
               href="/user/join"
               target="_self"
@@ -116,13 +116,13 @@ export default function Auth() {
                 borderBottom: `1px solid ${theme.blue}`,
               }}
             >
-              회원가입 하기
+              Get started!
             </Link>
           </sub>
           <div className="flex gap-1 mt-4">
             <GradientBtn clickEvent={handleSubmit}>
               <Text strong style={{ color: basic.bright, width: "100%" }}>
-                로그인
+                Log In
               </Text>
             </GradientBtn>
           </div>

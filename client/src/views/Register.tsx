@@ -30,7 +30,7 @@ export default function Register() {
       //   navigate("/");
       // }
     } catch (err) {
-      toast.error("회원가입에 문제가 생겼습니다.");
+      toast.error("Something wrong... Please wait.");
       console.error(err);
     }
   };

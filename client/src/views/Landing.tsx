@@ -17,12 +17,12 @@ export default function Landing() {
   return (
     <div className="flex flex-col justify-center items-center text-start w-full h-full">
       <div className="relative w-full h-full overflow-hidden p-4">
-        <div className="flex flex-col items-center justify-end h-[82%]">
+        <div className="flex flex-col items-center justify-end h-[77%]">
           <div style={{ textAlign: "start" }}>
             <div
               className="mr-2 flex justify-end"
               style={{
-                color: basic.bright,
+                color: theme.blue,
               }}
             >
               <LoadingOutlined
@@ -35,7 +35,7 @@ export default function Landing() {
             >
               Your
               <br />
-              running workout data analyst
+              running workout data analyst.
             </Title>
             <Title
               level={1}
@@ -48,7 +48,7 @@ export default function Landing() {
             </Title>
             <GradientBtn clickEvent={handleStartButton}>
               <Text strong style={{ color: basic.bright, width: "100%" }}>
-                시작하기
+                Get started
               </Text>
             </GradientBtn>
           </div>

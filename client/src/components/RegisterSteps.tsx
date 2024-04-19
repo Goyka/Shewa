@@ -79,14 +79,12 @@ export default function RegisterSteps({
         <Card
           title={
             <div className="text-center">
-              <Text strong type="secondary">
-                이메일 주소와 비밀번호를 등록해주세요.
-              </Text>
+              <Text strong>Choose your email address and password.</Text>
             </div>
           }
           bordered={true}
           style={{
-            width: 330,
+            width: 350,
           }}
         >
           <div
@@ -110,16 +108,16 @@ export default function RegisterSteps({
             {errors.username && <Text type="danger">{errors.username}</Text>}
             <Input
               size="large"
-              placeholder=" 패스워드"
+              placeholder=" password"
               type="password"
               onChange={(e) => handleChange(e, "password")}
               value={formState.data?.password}
               style={{ width: "100%" }}
             />
-            {errors.password && <Text type="danger">{errors.password}</Text>}{" "}
+            {errors.password && <Text type="danger">{errors.password}</Text>}
             <Input
               size="large"
-              placeholder=" 패스워드 확인"
+              placeholder=" confirm your password again"
               type="password"
               onChange={(e) => handleChange(e, "passwordConfirm")}
               value={formState.data?.passwordConfirm}
@@ -139,13 +137,13 @@ export default function RegisterSteps({
                   onClick={() => setSection(2)}
                 >
                   <Text strong style={{ color: basic.dark }}>
-                    다음
+                    Next
                   </Text>
                 </Button>
               ) : (
                 <Button size="large" type="dashed">
                   <Text strong style={{ color: basic.dark }}>
-                    다음
+                    Next
                   </Text>
                 </Button>
               )}
@@ -157,14 +155,12 @@ export default function RegisterSteps({
         <Card
           title={
             <div className="text-center">
-              <Text strong type="secondary">
-                프로필 정보를 입력해주세요.
-              </Text>
+              <Text strong>Please input profile information.</Text>
             </div>
           }
           bordered={true}
           style={{
-            width: 330,
+            width: 350,
           }}
         >
           <div
@@ -179,7 +175,7 @@ export default function RegisterSteps({
           >
             <Input
               size="large"
-              placeholder=" 닉네임"
+              placeholder=" nickname"
               type="text"
               onChange={(e) => handleChange(e, "nickname")}
               value={formState.data?.nickname}
@@ -190,7 +186,7 @@ export default function RegisterSteps({
               size="large"
               options={genderOptions}
               onChange={(value) => handleCascaderChange(value, "gender")}
-              placeholder=" 성별"
+              placeholder=" gender"
               style={{ width: "100%" }}
             />
             {errors.gender && <Text type="danger">{errors.gender}</Text>}
@@ -198,14 +194,14 @@ export default function RegisterSteps({
               size="large"
               options={regionOptions}
               onChange={(value) => handleCascaderChange(value, "region")}
-              placeholder=" 지역"
+              placeholder=" region"
               style={{ width: "100%" }}
             />
             {errors.region && <Text type="danger">{errors.region}</Text>}
             <div className="flex gap-1 mt-4">
               <Button size="large" type="default" onClick={() => setSection(1)}>
                 <Text strong style={{ color: basic.dark }}>
-                  이전
+                  Prev
                 </Text>
               </Button>
               {formState.data?.nickname &&
@@ -217,13 +213,13 @@ export default function RegisterSteps({
                   onClick={() => setSection(3)}
                 >
                   <Text strong style={{ color: basic.dark }}>
-                    다음
+                    Next
                   </Text>
                 </Button>
               ) : (
                 <Button size="large" type="dashed">
                   <Text strong style={{ color: basic.dark }}>
-                    다음
+                    Next
                   </Text>
                 </Button>
               )}
@@ -235,14 +231,12 @@ export default function RegisterSteps({
         <Card
           title={
             <div className="text-center">
-              <Text strong type="secondary">
-                신체 정보를 입력해주세요.
-              </Text>
+              <Text strong>Please input the last of infomation.</Text>
             </div>
           }
           bordered={true}
           style={{
-            width: 330,
+            width: 350,
           }}
         >
           <div
@@ -259,13 +253,13 @@ export default function RegisterSteps({
               size="large"
               options={ageOptions}
               onChange={(value) => handleCascaderChange(value, "age")}
-              placeholder=" 태어난 연도"
+              placeholder=" age"
               style={{ width: "100%" }}
             />
             {errors.age && <Text type="danger">{errors.age}</Text>}
             <Input
               size="large"
-              placeholder=" 신장"
+              placeholder=" height"
               type="text"
               onChange={(e) => handleChange(e, "height")}
               value={formState.data?.height}
@@ -274,7 +268,7 @@ export default function RegisterSteps({
             {errors.height && <Text type="danger">{errors.height}</Text>}
             <Input
               size="large"
-              placeholder=" 체중"
+              placeholder=" weight"
               type="text"
               onChange={(e) => handleChange(e, "weight")}
               value={formState.data?.weight}
@@ -284,7 +278,7 @@ export default function RegisterSteps({
             <div className="flex gap-1 mt-4">
               <Button size="large" type="default" onClick={() => setSection(2)}>
                 <Text strong style={{ color: basic.dark }}>
-                  이전
+                  Prev
                 </Text>
               </Button>
 
@@ -293,13 +287,13 @@ export default function RegisterSteps({
               formState.data?.weight ? (
                 <GradientBtn clickEvent={handleSubmit}>
                   <Text strong style={{ color: basic.bright }}>
-                    가입 하기
+                    Go
                   </Text>
                 </GradientBtn>
               ) : (
                 <Button size="large" type="dashed">
                   <Text strong style={{ color: basic.dark }}>
-                    가입 하기
+                    Go
                   </Text>
                 </Button>
               )}
@@ -307,7 +301,7 @@ export default function RegisterSteps({
           </div>
           <sub className="flex justify-center items-center text-center mt-4">
             <Text type="secondary">
-              계속 진행하실 경우,{" "}
+              By continuing, you agree to{" "}
               <Link to="/docs/user_privacy">
                 <Text
                   type="secondary"
@@ -316,13 +310,13 @@ export default function RegisterSteps({
                     borderBottom: `1px solid ${theme.blue}`,
                   }}
                 >
-                  개인정보 제공
+                  provide your personal information.
                 </Text>
               </Link>
-              <Text type="secondary">에 동의하게 됩니다.</Text>{" "}
               <Text type="secondary">
-                소중한 개인정보는 철저히 보호되며, 운동 데이터 분석의 목적으로만
-                사용됩니다.
+                {" "}
+                Your valuable personal information will be thoroughly protected
+                and used only for the purpose of exercise data analysis.
               </Text>
             </Text>
           </sub>

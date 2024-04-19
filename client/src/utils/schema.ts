@@ -1,52 +1,52 @@
 export const joinSchema = {
   username: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     format: {
       pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
-      message: "유효한 이메일 주소의 형식이 아닙니다.",
+      message: "It's not valid.",
     },
   },
   password: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       minimum: 8,
     },
   },
   passwordConfirm: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       minimum: 8,
     },
     equality: {
       attribute: "password",
-      message: "패스워드가 일치하지 않습니다.",
+      message: "It isn't matched.",
     },
   },
   nickname: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       maximum: 16,
       minimum: 1,
     },
   },
   gender: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
   },
   region: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
   },
   age: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
   },
   height: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       maximum: 3,
       minimum: 2,
     },
   },
   weight: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       maximum: 3,
       minimum: 2,
@@ -56,14 +56,14 @@ export const joinSchema = {
 
 export const loginSchema = {
   username: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     format: {
       pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
-      message: "유효한 이메일 주소의 형식이 아닙니다.",
+      message: "It's not valid.",
     },
   },
   password: {
-    presence: { allowEmpty: false, message: "필수 입력 정보입니다." },
+    presence: { allowEmpty: false, message: "Required field." },
     length: {
       minimum: 8,
     },
