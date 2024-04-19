@@ -10,7 +10,7 @@ export default function Landing() {
   const { Title, Text } = Typography;
 
   const handleStartButton = () => {
-    toast.info("회원가입 페이지로 이동합니다.");
+    toast.info("Redirecting to the Join page.");
     navigate("/user/join");
   };
 

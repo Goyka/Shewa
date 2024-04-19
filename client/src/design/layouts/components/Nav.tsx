@@ -24,9 +24,12 @@ export default function Nav() {
       <div className="flex">
         <MenuOutlined style={iconSizeAndColor} />
       </div>
-      <Link to="/" className="flex flex-row gap-1">
+      <Link
+        to="/"
+        className="flex flex-row gap-1 justify-center items-center text-center"
+      >
         <Image width={28} src={shewa_logo} preview={false} />
-        <Title level={4} style={titleStyle}>
+        <Title level={3} style={titleStyle}>
           Shewa
         </Title>
       </Link>

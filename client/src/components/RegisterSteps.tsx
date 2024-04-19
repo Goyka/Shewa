@@ -8,7 +8,7 @@ import { joinSchema } from "../utils/schema";
 import {
   genderOptions,
   createYearOptions,
-  regionOptions,
+  preferOptions,
 } from "../utils/cascaderOptions";
 import GradientBtn from "../components/GradientBtn";
 
@@ -30,7 +30,7 @@ export default function RegisterSteps({
       passwordConfirm: "",
       nickname: "",
       gender: "",
-      region: "",
+      prefer: "",
       age: "",
       height: "",
       weight: "",
@@ -192,12 +192,12 @@ export default function RegisterSteps({
             {errors.gender && <Text type="danger">{errors.gender}</Text>}
             <Cascader
               size="large"
-              options={regionOptions}
-              onChange={(value) => handleCascaderChange(value, "region")}
-              placeholder=" region"
+              options={preferOptions}
+              onChange={(value) => handleCascaderChange(value, "prefer")}
+              placeholder=" style"
               style={{ width: "100%" }}
             />
-            {errors.region && <Text type="danger">{errors.region}</Text>}
+            {errors.prefer && <Text type="danger">{errors.prefer}</Text>}
             <div className="flex gap-1 mt-4">
               <Button size="large" type="default" onClick={() => setSection(1)}>
                 <Text strong style={{ color: basic.dark }}>
@@ -206,7 +206,7 @@ export default function RegisterSteps({
               </Button>
               {formState.data?.nickname &&
               formState.data?.gender &&
-              formState.data?.region ? (
+              formState.data?.prefer ? (
                 <Button
                   size="large"
                   type="default"

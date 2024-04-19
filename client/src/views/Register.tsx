@@ -11,7 +11,7 @@ export interface joinStateType {
     passwordConfirm: string;
     nickname: string;
     gender: string;
-    region: string;
+    prefer: string;
     age: string;
     height: string;
     weight: string;
