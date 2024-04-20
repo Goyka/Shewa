@@ -1,20 +1,24 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from "react";
+import { RecoilRoot } from "recoil";
 import "./App.css";
+import Dashboard from "./views/Dashboard";
+import Landing from "./views/Landing";
 
 export default function App() {
   const token = localStorage.getItem("token");
-  const navigate = useNavigate();
+  const [isToken, setIsToken] = useState(false);
 
   useEffect(() => {
     if (token) {
-      toast.info("Welcome back!");
-      navigate("/dashboard");
+      setIsToken(true);
     } else {
-      navigate("/landing");
+      setIsToken(false);
     }
   }, []);
 
-  return <></>;
+  return (
+    <React.Fragment>
+      <RecoilRoot>{isToken ? <Dashboard /> : <Landing />}</RecoilRoot>
+    </React.Fragment>
+  );
 }

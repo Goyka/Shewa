@@ -7,7 +7,8 @@
 - ReactJS 18
 - TypeScript
 - React Router v6
+- Recoil
 - Vite
-- TailwindCSS
+- Tailwind CSS
 - Ant Design v5
 - React Toastify

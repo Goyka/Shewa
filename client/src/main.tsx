@@ -42,7 +42,6 @@ function Main() {
   );
 }
 
-// 기존 ReactDOM.render() 호출을 새로운 createRoot() API 사용으로 변경
 const container = document.getElementById("root");
 if (container !== null) {
   const root = ReactDOM.createRoot(container);
