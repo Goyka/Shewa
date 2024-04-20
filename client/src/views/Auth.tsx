@@ -70,7 +70,7 @@ export default function Auth() {
           <div className="text-center">
             <Text strong>Run, Save, Check with </Text>
             <Text strong style={{ color: theme.blue, fontSize: "16px" }}>
-              Shewa
+              shewa
             </Text>
           </div>
         }

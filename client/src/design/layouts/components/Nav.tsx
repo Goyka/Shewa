@@ -1,8 +1,8 @@
 // import React from "react";
 import { Link } from "react-router-dom";
-import { Typography, Image, Avatar } from "antd";
+import { Image, Avatar } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
-import { basic, theme } from "../../colors/colorCodes";
+import { basic } from "../../colors/colorCodes";
 import shewa_logo from "../../assets/shewa_logo.png";
 
 interface userDataType {
@@ -11,7 +11,6 @@ interface userDataType {
 }
 
 export default function Nav() {
-  const { Title } = Typography;
   const token = localStorage.getItem("token");
 
   const userData: userDataType = {
@@ -26,17 +25,14 @@ export default function Nav() {
       </div>
       <Link
         to="/"
-        className="flex flex-row gap-1 justify-center items-center text-center"
+        className="flex flex-row justify-center items-center text-center"
       >
-        <Image width={28} src={shewa_logo} preview={false} />
-        <Title level={3} style={titleStyle}>
-          Shewa
-        </Title>
+        <Image width={110} src={shewa_logo} preview={false} />
       </Link>
       {!token ? (
         <Link to="/user/login" className="flex">
           <Avatar
-            size={34}
+            size={28}
             style={{ backgroundColor: basic.dark }}
             icon={<UserOutlined style={{ color: basic.bright }} />}
           />
@@ -44,7 +40,7 @@ export default function Nav() {
       ) : (
         <Link to={`/dashboard/${userData.userId}`} className="flex">
           <Avatar
-            size={34}
+            size={28}
             style={{ backgroundColor: basic.dark }}
             src={<img src={userData.profileImg} alt="profileImg" />}
           />
@@ -54,11 +50,11 @@ export default function Nav() {
   );
 }
 
-const titleStyle = {
-  color: theme.blue,
-  justifyContent: "center",
-  marginBottom: "0em",
-  fontWeight: "800",
-};
+// const titleStyle = {
+//   color: theme.blue,
+//   justifyContent: "center",
+//   marginBottom: "0em",
+//   fontWeight: "800",
+// };
 
 const iconSizeAndColor = { fontSize: "24px", color: basic.dark };

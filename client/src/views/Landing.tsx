@@ -17,8 +17,12 @@ export default function Landing() {
   return (
     <div className="flex flex-col justify-center items-center text-start w-full h-full">
       <div className="relative w-full h-full overflow-hidden p-4">
-        <div className="flex flex-col items-center justify-end h-[77%]">
-          <div style={{ textAlign: "start" }}>
+        <div className="flex flex-col items-center justify-end h-[70%]">
+          <div
+            style={{
+              textAlign: "start",
+            }}
+          >
             <div
               className="mr-2 flex justify-end"
               style={{
@@ -31,26 +35,44 @@ export default function Landing() {
             </div>
             <Title
               level={2}
-              style={{ color: basic.bright, marginBottom: "-28px" }}
+              style={{
+                color: basic.bright,
+                marginBottom: "16px",
+                textShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+              }}
             >
               Your
               <br />
-              running workout data analyst.
+              data analyst for running workouts.
             </Title>
-            <Title
+            {/* <Title
               level={1}
               style={{
                 color: theme.blue,
                 fontWeight: "800",
               }}
             >
-              Shewa
-            </Title>
-            <GradientBtn clickEvent={handleStartButton}>
-              <Text strong style={{ color: basic.bright, width: "100%" }}>
-                Get started
-              </Text>
-            </GradientBtn>
+              shewa
+            </Title> */}
+            <div
+              style={{
+                width: "108px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.4)",
+                borderRadius: "8px",
+              }}
+            >
+              <GradientBtn clickEvent={handleStartButton}>
+                <Text
+                  strong
+                  style={{
+                    color: basic.bright,
+                    width: "100%",
+                  }}
+                >
+                  Get started
+                </Text>
+              </GradientBtn>
+            </div>
           </div>
         </div>
         <video

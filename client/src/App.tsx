@@ -6,7 +6,7 @@ import Landing from "./views/Landing";
 
 export default function App() {
   const token = localStorage.getItem("token");
-  const [isToken, setIsToken] = useState(false);
+  const [isToken, setIsToken] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
     if (token) {
