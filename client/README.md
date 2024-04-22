@@ -11,4 +11,5 @@
 - Vite
 - Tailwind CSS
 - Ant Design v5
+- AntV Design Charts
 - React Toastify
