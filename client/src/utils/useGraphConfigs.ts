@@ -55,7 +55,7 @@ export const useGraphConfigs = () => {
     },
     label: {
       text: ({ originData }: any) => {
-        const val = parseFloat(originData.value);
+        const val = parseFloat(originData?.value);
         if (val < 0.05) {
           return (val * 100).toFixed(1) + "%";
         }

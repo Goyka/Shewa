@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Card, Typography, Image } from "antd";
 import { Line, Column } from "@ant-design/charts";
+import { PlusOutlined } from "@ant-design/icons";
 import { basic, theme } from "../design/colors/colorCodes";
 import { useGraphConfigs } from "../utils/useGraphConfigs";
 
@@ -19,10 +20,22 @@ export default function Dashboard() {
 
   return (
     <React.Fragment>
-      <header className="flex flex-col justify-center items-center h-[38%] mt-2">
-        <div className="flex justify-around items-center w-full">
+      <header className="flex flex-col justify-center items-center">
+        <div className="flex justify-center items-center w-full px-3 overflow-hidden">
+          <Image
+            width={"100%"}
+            style={{
+              borderRadius: "8px",
+              objectFit: "cover",
+              height: "100px",
+              marginTop: "16px",
+            }}
+            src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/279279834_5298830383506720_8277120810420960751_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=TVjmdAXOMT8Ab6kNf2e&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBJiYl-147cLF6frrcc1L1lGJBprN3kCFbjD2m9-zfzZg&oe=662C4E12"
+          />
+        </div>
+        <div className="flex justify-around items-center w-full p-4 mt-1">
           <div className="flex flex-col justify-center items-center">
-            <Avatar size={70} style={{ marginBottom: "4px" }}></Avatar>
+            <Avatar size={70} style={{ marginBottom: "2px" }} />
             <Title level={5} style={{ marginBottom: "-2px" }}>
               nickname
             </Title>
@@ -40,17 +53,19 @@ export default function Dashboard() {
             width: "95%",
             height: "130px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            marginTop: "20px",
           }}
         >
-          <div style={{ width: "100%", paddingLeft: "2px" }}>
+          <div className="w-full px-2">
             <Title
               level={5}
               style={{
                 color: theme.blue,
+                display: "flex",
+                justifyContent: "space-between",
               }}
             >
               Recent Activity
+              <PlusOutlined />
             </Title>
             <div className="flex justify-start items-start gap-5">
               <Image
@@ -100,7 +115,7 @@ export default function Dashboard() {
           </div>
         </Card>
       </header>
-      <main className="flex flex-col gap-4 justify-start items-center h-[62%]">
+      <main className="flex flex-col gap-4 justify-start items-center py-4">
         <div className="flex gap-4 justify-center items-center w-full">
           <Card
             style={{
