@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Card, Typography, Image } from "antd";
 import { Line, Column } from "@ant-design/charts";
-import { theme } from "../design/colors/colorCodes";
+import { basic, theme } from "../design/colors/colorCodes";
 import { useGraphConfigs } from "../utils/useGraphConfigs";
 
 export default function Dashboard() {
@@ -19,7 +19,7 @@ export default function Dashboard() {
 
   return (
     <React.Fragment>
-      <header className="flex flex-col justify-center items-center h-[48%]">
+      <header className="flex flex-col justify-center items-center h-[38%] mt-2">
         <div className="flex justify-around items-center w-full">
           <div className="flex flex-col justify-center items-center">
             <Avatar size={70} style={{ marginBottom: "4px" }}></Avatar>
@@ -38,42 +38,69 @@ export default function Dashboard() {
         <Card
           style={{
             width: "95%",
-            height: "210px",
+            height: "130px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             marginTop: "20px",
           }}
         >
-          <div style={{ width: "100%", paddingLeft: "8px" }}>
-            <Title level={5}>Recent Activity</Title>
-            <Text style={{ color: theme.blue, fontWeight: 700 }}>
-              "acitivity name"
-            </Text>
-          </div>
-          <div className="flex justify-start items-center px-2 gap-10 w-full">
-            <div className="flex flex-col justify-center items-center">
+          <div style={{ width: "100%", paddingLeft: "2px" }}>
+            <Title
+              level={5}
+              style={{
+                color: theme.blue,
+              }}
+            >
+              Recent Activity
+            </Title>
+            <div className="flex justify-start items-start gap-5">
               <Image
-                width={110}
+                width={50}
                 style={{
                   borderRadius: "8px",
                   overflow: "hidden",
-                  width: "110px",
-                  height: "110px",
+                  height: "50px",
+                  marginTop: "8px",
                 }}
                 src="https://www.littlethings.info/wp-content/uploads/2014/04/dummy-image-green-e1398449160839.jpg"
               />
-            </div>
-            <div className="flex flex-col justify-start items-start">
-              <Text>Workout Time</Text>
-              <Text>Distance</Text>
-              <Text>Elevation Gain</Text>
-              <Text>Avg. Pace</Text>
-              <Text>Avg. Heart Rate</Text>
-              <Text>Avg. Power</Text>
+              <div className="flex flex-col">
+                <Text
+                  style={{
+                    color: basic.dark,
+                    fontWeight: 700,
+                    fontSize: "19px",
+                  }}
+                >
+                  "acitivity name"
+                </Text>
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <Text>Distance</Text>
+                    <Title level={5} style={{ marginTop: "-1px" }}>
+                      7.45km
+                    </Title>
+                  </div>
+                  |
+                  <div className="flex flex-col items-center">
+                    <Text>Workout Time</Text>
+                    <Title level={5} style={{ marginTop: "-1px" }}>
+                      52min 12sec
+                    </Title>
+                  </div>
+                  |
+                  <div className="flex flex-col items-center">
+                    <Text>Pace</Text>
+                    <Title level={5} style={{ marginTop: "-1px" }}>
+                      700
+                    </Title>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Card>
       </header>
-      <main className="flex flex-col gap-4 justify-start items-center h-[54%]">
+      <main className="flex flex-col gap-4 justify-start items-center h-[62%]">
         <div className="flex gap-4 justify-center items-center w-full">
           <Card
             style={{
@@ -122,3 +149,10 @@ export default function Dashboard() {
     </React.Fragment>
   );
 }
+
+//  <Text>Workout Time</Text>
+//             <Text>Distance</Text>
+//             <Text>Elevation Gain</Text>
+//             <Text>Avg. Pace</Text>
+//             <Text>Avg. Heart Rate</Text>
+//             <Text>Avg. Power</Text>
