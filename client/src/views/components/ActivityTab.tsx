@@ -1,21 +1,16 @@
 import { Card, Typography, Avatar } from "antd";
-import {
-  UserOutlined,
-  HeartOutlined,
-  ShareAltOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, HeartOutlined, LinkOutlined } from "@ant-design/icons";
 import { basic, theme } from "../../design/colors/colorCodes";
 
 export const ActivityTab = () => {
   const { Title, Text } = Typography;
 
   return (
-    <div className="px-3 w-full">
+    <div className="px-3 w-[100vw]">
       {/* card area */}
       <Card
+        className="w-full h-[500px]"
         style={{
-          width: "100%",
-          height: "500px",
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         }}
       >
@@ -53,14 +48,22 @@ export const ActivityTab = () => {
                     fontSize: "13px",
                   }}
                 >
-                  2024/04/23 9:30 AM | Neung-dong, Seoul
+                  2024/04/23 9:30 AM | Seoul
                 </Text>
               </div>
             </div>
           </div>
         </header>
-        <main className="flex flex-col justify-start items-start mt-3 w-full h-full">
-          <Title level={4}>"activity title"</Title>
+        <main className="flex flex-col justify-start items-start mt-3 px-2 w-full h-full">
+          <div className="flex justify-between items-center w-full">
+            <Title level={4}>"activity title"</Title>
+            <LinkOutlined
+              style={{
+                fontSize: "20px",
+                marginTop: "-10px",
+              }}
+            />
+          </div>
           <div className="flex gap-4">
             <div className="flex flex-col items-center">
               <Text>Distance</Text>
@@ -86,10 +89,9 @@ export const ActivityTab = () => {
           <div className="bg-gray-200 w-full h-[260px] rounded-md">
             {/* map area */}
           </div>
-          <div className="flex justify-end items-center gap-3 px-1 w-full mt-2 text-2xl">
+          <div className="flex justify-start items-center gap-3 px-1 w-full mt-2 text-xl">
             {/* icon area */}
             <HeartOutlined />
-            <ShareAltOutlined />
           </div>
         </main>
       </Card>
