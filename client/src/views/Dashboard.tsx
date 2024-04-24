@@ -58,74 +58,77 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <Card
-          style={{
-            width: "95%",
-            height: "130px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <div className="w-full px-2">
-            <Title
-              level={5}
-              style={{
-                color: theme.blue,
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              Recent Activity
-              <PlusOutlined />
-            </Title>
-            <div className="flex justify-start items-start gap-4">
-              <Image
-                width={50}
+      </header>
+      <main className="flex flex-col gap-4 justify-start items-center py-4">
+        <div className="px-3 w-full">
+          <Card
+            style={{
+              width: "100%",
+              height: "130px",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <div className="w-full px-2">
+              <Title
+                level={5}
                 style={{
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  height: "50px",
-                  marginTop: "8px",
+                  color: theme.blue,
+                  display: "flex",
+                  justifyContent: "space-between",
                 }}
-                src="https://www.littlethings.info/wp-content/uploads/2014/04/dummy-image-green-e1398449160839.jpg"
-              />
-              <div className="flex flex-col">
-                <Text
+              >
+                Recent Activity
+                <PlusOutlined />
+              </Title>
+              <div className="flex justify-start items-start gap-4">
+                <Image
+                  width={50}
                   style={{
-                    color: basic.dark,
-                    fontWeight: 700,
-                    fontSize: "19px",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    height: "50px",
+                    marginTop: "8px",
                   }}
-                >
-                  "acitivity name"
-                </Text>
-                <div className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <Text>Distance</Text>
-                    <Title level={5} style={{ marginTop: "-1px" }}>
-                      7.45km
-                    </Title>
-                  </div>
-                  |
-                  <div className="flex flex-col items-center">
-                    <Text>Workout Time</Text>
-                    <Title level={5} style={{ marginTop: "-1px" }}>
-                      52min 12sec
-                    </Title>
-                  </div>
-                  |
-                  <div className="flex flex-col items-center">
-                    <Text>Pace</Text>
-                    <Title level={5} style={{ marginTop: "-1px" }}>
-                      700
-                    </Title>
+                  src="https://www.littlethings.info/wp-content/uploads/2014/04/dummy-image-green-e1398449160839.jpg"
+                />
+                <div className="flex flex-col">
+                  <Text
+                    style={{
+                      color: basic.dark,
+                      fontWeight: 700,
+                      fontSize: "19px",
+                    }}
+                  >
+                    "acitivity name"
+                  </Text>
+                  <div className="flex gap-4">
+                    <div className="flex flex-col items-center">
+                      <Text>Distance</Text>
+                      <Title level={5} style={{ marginTop: "-1px" }}>
+                        7.45km
+                      </Title>
+                    </div>
+                    |
+                    <div className="flex flex-col items-center">
+                      <Text>Workout Time</Text>
+                      <Title level={5} style={{ marginTop: "-1px" }}>
+                        52min 12sec
+                      </Title>
+                    </div>
+                    |
+                    <div className="flex flex-col items-center">
+                      <Text>Pace</Text>
+                      <Title level={5} style={{ marginTop: "-1px" }}>
+                        700
+                      </Title>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Card>
-      </header>
-      <main className="flex flex-col gap-4 justify-start items-center py-4">
+          </Card>
+        </div>
+
         <div className="flex gap-4 justify-center items-center w-full">
           <Card
             style={{

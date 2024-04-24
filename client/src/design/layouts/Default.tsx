@@ -1,10 +1,14 @@
+import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 // import { basic } from "../colors/colorCodes";
 
 export default function Default(props: any) {
   const { children } = props;
-  const pathName = window.location.pathname;
-  const isLandingPage = pathName === "/landing";
+  const [isLandingPage, setIsLandingPage] = useState(false);
+
+  useEffect(() => {
+    setIsLandingPage(window.location.pathname === "/landing");
+  }, [window.location.pathname]);
 
   const mainStyle = isLandingPage ? { ...main, padding: "0px 0px" } : main;
 

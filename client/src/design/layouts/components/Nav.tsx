@@ -1,4 +1,3 @@
-// import React from "react";
 import { Image, Avatar } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import { basic } from "../../colors/colorCodes";
@@ -17,6 +16,21 @@ export default function Nav() {
     profileImg: "",
   };
 
+  const handleLogoClick = () => {
+    window.history.pushState({}, "", "/");
+    window.dispatchEvent(new Event("popstate"));
+  };
+
+  const handleLoginClick = () => {
+    window.history.pushState({}, "", "/user/login");
+    window.dispatchEvent(new Event("popstate"));
+  };
+
+  const handleDashboardClick = () => {
+    window.history.pushState({}, "", `/dashboard/${userData.userId}`);
+    window.dispatchEvent(new Event("popstate"));
+  };
+
   return (
     <div className="h-full flex justify-between items-center p-3">
       <div className="flex">
@@ -27,7 +41,7 @@ export default function Nav() {
           width={110}
           src={shewa_logo}
           preview={false}
-          onClick={() => (window.location.href = "/")}
+          onClick={handleLogoClick}
         />
       </div>
       {!token ? (
@@ -35,27 +49,18 @@ export default function Nav() {
           size={28}
           style={{ backgroundColor: basic.dark }}
           icon={<UserOutlined style={{ color: basic.bright }} />}
-          onClick={() => (window.location.href = "/user/login")}
+          onClick={handleLoginClick}
         />
       ) : (
         <Avatar
           size={28}
           style={{ backgroundColor: basic.dark }}
           src={<img src={userData.profileImg} alt="profileImg" />}
-          onClick={() =>
-            (window.location.href = `/dashboard/${userData.userId}`)
-          }
+          onClick={handleDashboardClick}
         />
       )}
     </div>
   );
 }
-
-// const titleStyle = {
-//   color: theme.blue,
-//   justifyContent: "center",
-//   marginBottom: "0em",
-//   fontWeight: "800",
-// };
 
 const iconSizeAndColor = { fontSize: "24px", color: basic.dark };
