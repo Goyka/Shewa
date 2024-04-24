@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router";
 import { RecoilRoot } from "recoil";
 import "./App.css";
-import Dashboard from "./views/Dashboard";
-import Landing from "./views/Landing";
+// import Dashboard from "./views/Dashboard";
+// import Landing from "./views/Landing";
 
 export default function App() {
   const token = localStorage.getItem("token");
-  const [isToken, setIsToken] = useState(!!localStorage.getItem("token"));
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (token) {
-      setIsToken(true);
+      navigate("/dashboard");
     } else {
-      setIsToken(false);
+      navigate("/landing");
     }
   }, []);
 
   return (
-    <React.Fragment>
-      <RecoilRoot>{isToken ? <Dashboard /> : <Landing />}</RecoilRoot>
-    </React.Fragment>
+    <RecoilRoot>
+      <React.Fragment></React.Fragment>
+    </RecoilRoot>
   );
 }
