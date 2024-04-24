@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Typography } from "antd";
 import { toast } from "react-toastify";
 import { theme } from "../design/colors/colorCodes";
-import RegisterSteps from "../components/RegisterSteps";
+import RegisterSteps from "./components/RegisterSteps";
 
 export interface joinStateType {
   data: {

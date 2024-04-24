@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Avatar, Card, Typography, Image } from "antd";
 import { Line, Column } from "@ant-design/charts";
 import { PlusOutlined } from "@ant-design/icons";
@@ -59,7 +59,7 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
-      <main className="flex flex-col gap-4 justify-start items-center py-4">
+      <main className="flex flex-col gap-4 justify-start items-center">
         <div className="px-3 w-full">
           <Card
             style={{
@@ -78,7 +78,9 @@ export default function Dashboard() {
                 }}
               >
                 Recent Activity
-                <PlusOutlined />
+                <Link to={"/activities"}>
+                  <PlusOutlined />
+                </Link>
               </Title>
               <div className="flex justify-start items-start gap-4">
                 <Image
@@ -128,7 +130,6 @@ export default function Dashboard() {
             </div>
           </Card>
         </div>
-
         <div className="flex gap-4 justify-center items-center w-full">
           <Card
             style={{
