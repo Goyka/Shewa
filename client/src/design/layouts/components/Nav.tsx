@@ -1,5 +1,3 @@
-// import React from "react";
-import { Link } from "react-router-dom";
 import { Image, Avatar } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import { basic } from "../../colors/colorCodes";
@@ -18,43 +16,51 @@ export default function Nav() {
     profileImg: "",
   };
 
+  const handleLogoClick = () => {
+    window.history.pushState({}, "", "/");
+    window.dispatchEvent(new Event("popstate"));
+  };
+
+  const handleLoginClick = () => {
+    window.history.pushState({}, "", "/user/login");
+    window.dispatchEvent(new Event("popstate"));
+  };
+
+  const handleDashboardClick = () => {
+    window.history.pushState({}, "", `/dashboard/${userData.userId}`);
+    window.dispatchEvent(new Event("popstate"));
+  };
+
   return (
     <div className="h-full flex justify-between items-center p-3">
       <div className="flex">
         <MenuOutlined style={iconSizeAndColor} />
       </div>
-      <Link
-        to="/"
-        className="flex flex-row justify-center items-center text-center"
-      >
-        <Image width={110} src={shewa_logo} preview={false} />
-      </Link>
+      <div className="flex flex-row justify-center items-center text-center">
+        <Image
+          width={110}
+          src={shewa_logo}
+          preview={false}
+          onClick={handleLogoClick}
+        />
+      </div>
       {!token ? (
-        <Link to="/user/login" className="flex">
-          <Avatar
-            size={28}
-            style={{ backgroundColor: basic.dark }}
-            icon={<UserOutlined style={{ color: basic.bright }} />}
-          />
-        </Link>
+        <Avatar
+          size={28}
+          style={{ backgroundColor: basic.dark }}
+          icon={<UserOutlined style={{ color: basic.bright }} />}
+          onClick={handleLoginClick}
+        />
       ) : (
-        <Link to={`/dashboard/${userData.userId}`} className="flex">
-          <Avatar
-            size={28}
-            style={{ backgroundColor: basic.dark }}
-            src={<img src={userData.profileImg} alt="profileImg" />}
-          />
-        </Link>
+        <Avatar
+          size={28}
+          style={{ backgroundColor: basic.dark }}
+          src={<img src={userData.profileImg} alt="profileImg" />}
+          onClick={handleDashboardClick}
+        />
       )}
     </div>
   );
 }
-
-// const titleStyle = {
-//   color: theme.blue,
-//   justifyContent: "center",
-//   marginBottom: "0em",
-//   fontWeight: "800",
-// };
 
 const iconSizeAndColor = { fontSize: "24px", color: basic.dark };

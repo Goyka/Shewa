@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Typography, Input, Button, Cascader, Card } from "antd";
-import { basic, theme } from "../design/colors/colorCodes";
-import { joinStateType } from "../views/Register";
-import { validator } from "../utils/validator";
-import { joinSchema } from "../utils/schema";
+import { basic, theme } from "../../design/colors/colorCodes";
+import { joinStateType } from "../Register";
+import { validator } from "../../utils/validator";
+import { joinSchema } from "../../utils/schema";
 import {
   genderOptions,
   createYearOptions,
   preferOptions,
-} from "../utils/cascaderOptions";
-import GradientBtn from "../components/GradientBtn";
+} from "../../utils/cascaderOptions";
+import GradientBtn from "../../components/GradientBtn";
 
 interface stepsPropType {
   section: number;
